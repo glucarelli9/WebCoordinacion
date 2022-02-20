@@ -1,0 +1,165 @@
+function loadImage(url) {
+    return new Promise(resolve => {
+        const xhr = new XMLHttpRequest();
+        xhr.open('GET', url, true);
+        xhr.responseType = "blob";
+        xhr.onload = function (e) {
+            const reader = new FileReader();
+            reader.onload = function(event) {
+                const res = event.target.result;
+                resolve(res);
+            }
+            const file = this.response;
+            reader.readAsDataURL(file);
+        }
+        xhr.send();
+    });
+}
+
+let signaturePad = null;
+
+window.addEventListener('load', async () => {
+
+
+    const canvas = document.querySelector("canvas");
+    canvas.height = canvas.offsetHeight;
+    canvas.width = canvas.offsetWidth;
+
+    signaturePad = new SignaturePad(canvas, {});
+
+    var cancelButton = document.getElementById('clear');
+    cancelButton.addEventListener('click', function (event) {
+    signaturePad.clear();
+    });
+    const form = document.querySelector('#form');
+    form.addEventListener('submit', (e) => {
+        e.preventDefault();
+        let equipmentB = document.getElementById('equipmentB').value.toUpperCase();
+        let pilotInCommand = document.getElementById('pilotInCommand').value.toUpperCase();
+        let aircraftColourAndMarkings = document.getElementById('aircraftColourAndMarkings').value.toUpperCase();
+        let aircraftIdentification = document.getElementById('aircraftIdentification').value.toUpperCase();
+        let wakeTurbulenceCat = document.getElementById('wakeTurbulenceCat').value;
+        let flightRules = document.getElementById('flightRules').value;
+        let equipmentA = document.getElementById('equipmentA').value.toUpperCase();
+        let typeOfFlight = document.getElementById('typeOfFlight').value;
+        let typeOfAircraft = document.getElementById('typeOfAircraft').value.toUpperCase();
+        let time = document.getElementById('time').value;
+
+        let time2 = document.getElementById('time2').value;
+
+        let totalEet = document.getElementById('totalEet').value;
+
+        let altnAerodrome = document.getElementById('altnAerodrome').value.toUpperCase();
+        let cruisingSpeed = document.getElementById('cruisingSpeed').value.toUpperCase();
+        let level = document.getElementById('level').value.toUpperCase();
+        let route = document.getElementById('route').value.toUpperCase();
+        let destinationAerodrome = document.getElementById('destinationAerodrome').value.toUpperCase();
+        let departureAerodrome = document.getElementById('departureAerodrome').value.toUpperCase();
+       
+        let altnAerodrome2 = document.getElementById('altnAerodrome2').value.toUpperCase();
+
+        let otherInformation = document.getElementById('otherInformation').value.toUpperCase();
+        let grupo = document.querySelector('input[name="grupo"]:checked').value;
+        if (grupo === 'on'){
+            grupo = ''
+        };
+        console.log(grupo);
+ 
+        let endurance = document.getElementById('endurance').value;
+
+     
+
+        let hijos = document.querySelector('input[name="hijos"]:checked').value;
+        let numeroHijos = document.getElementById('numeroHijos').value;
+        let discapacidad = document.querySelector('input[name="discapacidad"]:checked').value;
+        let discapacidadDesc = document.getElementById('discapacidad-desc').value;
+        let personOnBoard = document.getElementById('personOnBoard').value;
+
+        generatePDF(equipmentB, pilotInCommand, aircraftColourAndMarkings, aircraftIdentification, wakeTurbulenceCat, flightRules, equipmentA, typeOfFlight, typeOfAircraft, time, personOnBoard, endurance, altnAerodrome, otherInformation, altnAerodrome2, departureAerodrome, time2, grupo, destinationAerodrome, route, totalEet, cruisingSpeed, level, hijos, numeroHijos, discapacidad, discapacidadDesc);
+    })
+
+});
+
+async function generatePDF(equipmentB, pilotInCommand, aircraftColourAndMarkings, aircraftIdentification, wakeTurbulenceCat, flightRules, equipmentA, typeOfFlight, typeOfAfunction loadImage(url) {
+    return new Promise(resolve => {
+        const xhr = new XMLHttpRequest();
+        xhr.open('GET', url, true);
+        xhr.responseType = "blob";
+        xhr.onload = function (e) {
+            const reader = new FileReader();
+            reader.onload = function(event) {
+                const res = event.target.result;
+                resolve(res);
+            }
+            const file = this.response;
+            reader.readAsDataURL(file);
+        }
+        xhr.send();
+    });
+}
+
+let signaturePad = null;
+
+window.addEventListener('load', async () => {
+
+
+    const canvas = document.querySelector("canvas");
+    canvas.height = canvas.offsetHeight;
+    canvas.width = canvas.offsetWidth;
+
+    signaturePad = new SignaturePad(canvas, {});
+
+    var cancelButton = document.getElementById('clear');
+    cancelButton.addEventListener('click', function (event) {
+    signaturePad.clear();
+    });
+    const form = document.querySelector('#form');
+    form.addEventListener('submit', (e) => {
+        e.preventDefault();
+        let equipmentB = document.getElementById('equipmentB').value.toUpperCase();
+        let pilotInCommand = document.getElementById('pilotInCommand').value.toUpperCase();
+        let aircraftColourAndMarkings = document.getElementById('aircraftColourAndMarkings').value.toUpperCase();
+        let aircraftIdentification = document.getElementById('aircraftIdentification').value.toUpperCase();
+        let wakeTurbulenceCat = document.getElementById('wakeTurbulenceCat').value;
+        let flightRules = document.getElementById('flightRules').value;
+        let equipmentA = document.getElementById('equipmentA').value.toUpperCase();
+        let typeOfFlight = document.getElementById('typeOfFlight').value;
+        let typeOfAircraft = document.getElementById('typeOfAircraft').value.toUpperCase();
+        let time = document.getElementById('time').value;
+
+        let time2 = document.getElementById('time2').value;
+
+        let totalEet = document.getElementById('totalEet').value;
+
+        let altnAerodrome = document.getElementById('altnAerodrome').value.toUpperCase();
+        let cruisingSpeed = document.getElementById('cruisingSpeed').value.toUpperCase();
+        let level = document.getElementById('level').value.toUpperCase();
+        let route = document.getElementById('route').value.toUpperCase();
+        let destinationAerodrome = document.getElementById('destinationAerodrome').value.toUpperCase();
+        let departureAerodrome = document.getElementById('departureAerodrome').value.toUpperCase();
+       
+        let altnAerodrome2 = document.getElementById('altnAerodrome2').value.toUpperCase();
+
+        let otherInformation = document.getElementById('otherInformation').value.toUpperCase();
+        let grupo = document.querySelector('input[name="grupo"]:checked').value;
+        if (grupo === 'on'){
+            grupo = ''
+        };
+        console.log(grupo);
+ 
+        let endurance = document.getElementById('endurance').value;
+
+     
+
+        let hijos = document.querySelector('input[name="hijos"]:checked').value;
+        let numeroHijos = document.getElementById('numeroHijos').value;
+        let discapacidad = document.querySelector('input[name="discapacidad"]:checked').value;
+        let discapacidadDesc = document.getElementById('discapacidad-desc').value;
+        let personOnBoard = document.getElementById('personOnBoard').value;
+
+        generatePDF(equipmentB, pilotInCommand, aircraftColourAndMarkings, aircraftIdentification, wakeTurbulenceCat, flightRules, equipmentA, typeOfFlight, typeOfAircraft, time, personOnBoard, endurance, altnAerodrome, otherInformation, altnAerodrome2, departureAerodrome, time2, grupo, destinationAerodrome, route, totalEet, cruisingSpeed, level, hijos, numeroHijos, discapacidad, discapacidadDesc);
+    })
+
+});
+
+async function generatePDF(equipmentB, pilotInCommand, aircraftColourAndMarkings, aircraftIdentification, wakeTurbulenceCat, flightRules, equipmentA, typeOfFlight, typeOfA
