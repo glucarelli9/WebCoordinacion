@@ -82,7 +82,7 @@ async function generatePDF(observaciones, adestino, adProcedencia,
     // Siguientes Textos
     pdf.setFontSize(12);
     pdf.text(observaciones, 130, 625);
-    pdf.text(adestino, 170, 485);
+    pdf.text(adestino, 40, 422); // Nombre y apellidos
     pdf.setFontSize(12);
     pdf.text(adProcedencia, 350, 164);   // Vuelo Numero
     pdf.text(presentadoPor, 130, 144);   //Explotador
@@ -93,14 +93,14 @@ async function generatePDF(observaciones, adestino, adProcedencia,
     pdf.text(matriculaExtension, 350, 184);  // LLegada a.....
     pdf.text(tipoAeronave, 40, 278); //LUGAR RUTA DE VUELO
     //Fecha
-    var lMargin=148;
+    var lMargin=148
     var rMargin=-65;
     var pdfInMM=279;  
-    var lines = pdf.splitTextToSize(fechaInicio, (pdfInMM-rMargin-lMargin));
-    pdf.text(lMargin, 278, lines);
-    /* pdf.text(fechaInicio, 150, 278); */ // NOMBRES DE LA TRIPU
-    pdf.text(horarioFechaInicio, 365, 529);
-    pdf.text(fechaFinalizacion, 159, 549);
+    var lines = pdf.splitTextToSize(fechaInicio, (pdfInMM-rMargin-lMargin)); // NOMBRES DE LA TRIPU
+    pdf.text(lMargin, 278, lines);  
+    /* pdf.text(fechaInicio, 150, 278); */ 
+    pdf.text(horarioFechaInicio, 250, 422); // NACIONALIDAD
+    pdf.text(fechaFinalizacion, 410, 422); // OBSERVACIONES
     pdf.text(horariofechaFinalizacion, 365, 549);
     
     /* var lMargin=38;
