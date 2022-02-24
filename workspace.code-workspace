@@ -1,0 +1,13 @@
+{
+	"folders": [
+		{
+			"path": "../Angular/proyecto1/proyecto"
+		},
+		{
+			"path": "."
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "WebCoordinacion"
+	}
+}
