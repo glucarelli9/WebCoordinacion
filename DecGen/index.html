@@ -94,36 +94,44 @@
                             <label for="fechaFinalizacion">OBSERVACIONES: (*)</label>
                             <input type="text" class="form-control" id="fechaFinalizacion"  name="fechaFinalizacion" style="text-transform: uppercase" placeholder="OBSERVACIONES" >
                         </div>
+                        <div class="form-group col-md-10"> 
+                            <div class="alert alert-warning alert-dismissible" id="alertOtherInformation">
+                                <strong>NUMERO DE PASAJEROS EN ESTA ETAPA (*):</strong>
+                            </div>
+                        </div>
                         <div class="form-group col-md-3">
-                            <label for="horariofechaFinalizacion">HORARIO EN UTC (*)</label>
-                            <input type="number" class="form-control" id="horariofechaFinalizacion" name="horariofechaFinalizacion"  >
+                            <label for="horariofechaFinalizacion">LUGAR DE SALIDA (*)</label>
+                            <input type="text" class="form-control" id="horariofechaFinalizacion" name="horariofechaFinalizacion" style="text-transform: uppercase" >
                         </div>
                     </div>
-
-                    
                     <div class="form-row">
                         <div class="form-group col-md-4">
-                            <label for="dniLegajoLicencia">DNI / LEGAJO / LICENCIA</label>
-                            <input type="tel" class="form-control" id="dniLegajoLicencia" name="dniLegajoLicencia"  >
+                            <label for="dniLegajoLicencia">EMBARCAN(*)</label>
+                            <input type="tel" class="form-control" id="dniLegajoLicencia" name="dniLegajoLicencia" style="text-transform:uppercase"  >
                         </div>
                         <div class="form-group col-md-4">
-                            <label for="telefonoContacto">TELÉFONO DE CONTACTO</label>
+                            <label for="telefonoContacto">CONTINUAN EN EL MISMO VUELO(*)</label>
                             <input type="tel" class="form-control" id="telefonoContacto" name="telefonoContacto"  >
                         </div>
+                        <div class="form-group col-md-10"> 
+                            <div class="alert alert-warning alert-dismissible" id="alertOtherInformation">
+                                <strong>--------------------------------------------------------------------------------------------------------------------------------------------------------</strong>
+                            </div>
+                        </div>
                         <div class="form-group col-md-4">
-                            <label for="emailContacto">EMAIL DE CONTACTO</label>
-                            <input type="email" class="form-control" id="emailContacto" name="emailContacto"  >
+                            <label for="emailContacto">LUGAR DE LLEGADA(*)</label>
+                            <input type="TEXT" class="form-control" id="emailContacto" name="emailContacto"  placeholder="SAAR" style="text-transform: uppercase">
                         </div>
                     </div>
-		
+                  
                         <div class="form-group col-md-8">
-                            	<label for="observaciones">OBSERVACIONES: </label>
-				<input type="text" class="form-control" id="observaciones" name="observaciones" placeholder="OBSERVACIONES" >
+                            	<label for="observaciones">DESEMBARCAN(*)</label>
+				<input type="text" class="form-control" id="observaciones" name="observaciones" placeholder="" style="text-transform: uppercase" >
                         </div>
                     </div>
                     <div class="form-group col-md-8">
-                        <label>ACLARACIÓN:</label>
-                        <input type="text" style="text-transform: uppercase" class="form-control" id="aclaracion" name="aclaracion" placeholder="ACLARACIÓN"  >
+                        <label>CONTINUAN (*)</label>
+                        <input type="text" style="text-transform: uppercase" class="form-control" id="aclaracion" name="aclaracion" placeholder=""  >
                     </div>
 
 

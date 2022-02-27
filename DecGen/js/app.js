@@ -53,13 +53,12 @@ window.addEventListener('load', async () => {
         // Primeros dos
         let adDestino = document.getElementById('adDestino').value.toUpperCase();
         let presentadoPor = document.getElementById('presentadoPor').value.toUpperCase();
-       
         // no va
 /*         let hijos = document.querySelector('input[name="hijos"]:checked').value;
         let numeroHijos = document.getElementById('numeroHijos').value;
         let discapacidad = document.querySelector('input[name="discapacidad"]:checked').value;
         let discapacidadDesc = document.getElementById('discapacidad-desc').value;
- */        generatePDF(observaciones,adestino, adProcedencia, aclaracion, emailContacto, telefonoContacto, dniLegajoLicencia,
+ */        generatePDF( observaciones,adestino, adProcedencia, aclaracion, emailContacto, telefonoContacto, dniLegajoLicencia,
               horariofechaFinalizacion, fechaFinalizacion, horarioFechaInicio, fechaInicio, 
              tipoAeronave, matriculaExtension, adAlternativa2, adAlternativa, adDestino, presentadoPor, 
             );
@@ -67,7 +66,7 @@ window.addEventListener('load', async () => {
 
 });
 
-async function generatePDF(observaciones, adestino, adProcedencia,
+async function generatePDF( observaciones, adestino, adProcedencia,
      aclaracion, emailContacto, telefonoContacto, dniLegajoLicencia, horariofechaFinalizacion, 
      fechaFinalizacion, horarioFechaInicio, fechaInicio, tipoAeronave, matriculaExtension, 
      adAlternativa2, adAlternativa, adDestino, presentadoPor) {
@@ -75,13 +74,15 @@ async function generatePDF(observaciones, adestino, adProcedencia,
     const signatureImage = signaturePad.toDataURL();
     const pdf = new jsPDF('p', 'pt', 'letter');
     pdf.addImage(image, 'PNG', 0, 0, 565, 792);
-    pdf.addImage(signatureImage, 'PNG', 50, 635, 280, 60);
+    pdf.addImage(signatureImage, 'PNG', 320, 698, 280, 60);
     // IF Para los SELECT SOLICITUD
     pdf.setFontSize(12);
     
     // Siguientes Textos
+    pdf.setFontSize(8); //DESEMBARCAN
+    pdf.text(observaciones, 390, 326);
     pdf.setFontSize(12);
-    pdf.text(observaciones, 130, 625);
+    
     pdf.text(adestino, 40, 422); // Nombre y apellidos
     pdf.setFontSize(12);
     pdf.text(adProcedencia, 350, 164);   // Vuelo Numero
@@ -101,8 +102,12 @@ async function generatePDF(observaciones, adestino, adProcedencia,
     /* pdf.text(fechaInicio, 150, 278); */ 
     pdf.text(horarioFechaInicio, 250, 422); // NACIONALIDAD
     pdf.text(fechaFinalizacion, 410, 422); // OBSERVACIONES
-    pdf.text(horariofechaFinalizacion, 365, 549);
-    
+    pdf.setFontSize(8);
+    pdf.text(horariofechaFinalizacion, 402, 278);  // LUGAR DE SALIDA
+    pdf.text(dniLegajoLicencia, 390, 287); // EMBARCAN
+    pdf.text(telefonoContacto, 470, 297); // CONTINUAN EN EL MISMO VUELO
+    pdf.text(emailContacto, 402, 318); // Lugar de llegada
+    pdf.text(aclaracion, 470, 337);
     /* var lMargin=38;
     var rMargin=-255;
     var pdfInMM=279;  
@@ -131,12 +136,9 @@ async function generatePDF(observaciones, adestino, adProcedencia,
         pdf.setFontSize(14);
         pdf.text("X", 310, 581);
     } */
-    pdf.setFontSize(12);
-    pdf.text(dniLegajoLicencia, 159, 689);
-    pdf.text(telefonoContacto, 160, 709);
-    pdf.text(emailContacto, 138, 730);
-    pdf.text(aclaracion, 366, 667);
-
+  
+    
+    
    
 
 
