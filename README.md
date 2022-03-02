@@ -12,4 +12,4 @@ Web de la Coordinacion Aerea organizada y generada con: <br>
 
 #### ✅ JAVASCRIPT
 ### Screenshot
-![Image text](preview.jpg)
+![Image text](preview.png)
