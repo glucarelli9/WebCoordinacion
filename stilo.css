@@ -1,11 +1,18 @@
 body {
   margin: 0;
-  font-family: -apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+  font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, sans-serif;
 }
 header {
   padding: 10px 0;
-  background: repeating-linear-gradient(45deg, #f0f7ed, #f0f2ed 20px, #f8f4eb 20px, #A8f4eb 40px);
-  box-shadow: 0 4px 6px rgba(0,0,0,.2);  
+  background: repeating-linear-gradient(
+    45deg,
+    #f0f7ed,
+    #f0f2ed 20px,
+    #f8f4eb 20px,
+    #a8f4eb 40px
+  );
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
 }
 .container {
   padding: 0 20px;
@@ -21,7 +28,9 @@ header {
   outline: none;
   display: block;
 }
-.logo-box img {display: block;}
+.logo-box img {
+  display: block;
+}
 nav {
   overflow: hidden;
 }
@@ -36,7 +45,7 @@ nav li {
   margin-left: 25px;
   height: 70px;
   line-height: 70px;
-  transition: .5s linear;
+  transition: 0.5s linear;
 }
 nav a {
   text-decoration: none;
@@ -53,28 +62,42 @@ nav a:after {
   left: 0;
   bottom: 15px;
   background: #868686;
-  transition: width .5s linear;  
+  transition: width 0.5s linear;
 }
-nav a:hover:after {width: 100%;}
+nav a:hover:after {
+  width: 100%;
+}
 
 @media screen and (max-width: 660px) {
-  header {text-align: center;}
+  header {
+    text-align: center;
+  }
   .logo-box {
     float: none;
     display: inline-block;
     margin: 0 0 16px 0;
   }
-  ul {float: none;}
-  nav li:first-of-type {margin-left: 0;}
+  ul {
+    float: none;
+  }
+  nav li:first-of-type {
+    margin-left: 0;
+  }
 }
 @media screen and (max-width: 550px) {
-nav {overflow: visible;}
-nav li {
-  display: block;
-  margin: 0;
-  height: 40px;
-  line-height: 40px;
-}
-nav li:hover {background: rgba(0,0,0,.1);}
-nav a:after {content: none;}
+  nav {
+    overflow: visible;
+  }
+  nav li {
+    display: block;
+    margin: 0;
+    height: 40px;
+    line-height: 40px;
+  }
+  nav li:hover {
+    background: rgba(0, 0, 0, 0.1);
+  }
+  nav a:after {
+    content: none;
+  }
 }
